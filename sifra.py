@@ -34,10 +34,10 @@ logging.basicConfig(
 engine = pyttsx3.init("sapi5")
 
 voices = engine.getProperty("voices")
-engine.setProperty("voice", voices[0].id)  
+engine.setProperty("voice", voices[0].id)
 
 rate = engine.getProperty("rate")
-engine.setProperty("rate", 170)  
+engine.setProperty("rate", 170)
 
 
 def speak(text):
@@ -153,6 +153,7 @@ def gemini_model_response(user_input):
 
 # ======================= Window Commands =========================
 
+
 def close_active_window():
     """
     Closes the currently active window.
@@ -215,6 +216,7 @@ def switch_window():
 
 # ========================= System Settings ==========================
 
+
 def volume_up():
     """
     Increases system volume by 5 steps using simulated key presses.
@@ -224,7 +226,7 @@ def volume_up():
     """
     try:
         for _ in range(5):
-            pyautogui.press('volumeup')
+            pyautogui.press("volumeup")
             time.sleep(0.1)
         speak("Volume increased by 5 steps")
         logging.info("Volume increased by 5 percent")
@@ -242,7 +244,7 @@ def volume_down():
     """
     try:
         for _ in range(5):
-            pyautogui.press('volumedown')
+            pyautogui.press("volumedown")
             time.sleep(0.1)
         speak("Volume decreased by 5 steps")
         logging.info("Volume decreased by 5 percent")
@@ -259,7 +261,7 @@ def mute_volume():
         None
     """
     try:
-        pyautogui.press('volumemute')
+        pyautogui.press("volumemute")
         speak("Volume muted")
         logging.info("Volume muted")
     except Exception as e:
@@ -333,8 +335,6 @@ def scroll_down():
         logging.error(f"Scroll Down Error: {e}")
 
 
-
-
 greeting()
 
 while True:
@@ -357,7 +357,7 @@ while True:
     elif "wikipedia" in query:
         speak("Searching Wikipedia...")
         wikipedia_search(query)
-        
+
     elif "open" in query and "youtube" in query:
         open_website("YouTube", "https://www.youtube.com")
 
@@ -365,15 +365,17 @@ while True:
         open_website("Google", "https://www.google.com")
 
     elif "open" in query and "linkedin" in query:
-        open_website("Linkedin", "https://www.linkedin.com/in/muhaiminul-sadat-4a574736b/")
-    
-    elif 'open' in query and 'facebook' in query:
-        open_website('facebook','facebook.com')
+        open_website(
+            "Linkedin", "https://www.linkedin.com/in/muhaiminul-sadat-4a574736b/"
+        )
+
+    elif "open" in query and "facebook" in query:
+        open_website("facebook", "facebook.com")
 
     elif "close" in query:
         close_active_window()
 
-    elif "minimize" in query or 'minimise' in query:
+    elif "minimize" in query or "minimise" in query:
         minimize_window()
 
     elif "maximize" in query or "full screen" in query or "fullscreen" in query:
@@ -386,32 +388,32 @@ while True:
     elif "switch window" in query:
         switch_window()
 
-    elif "volume" in query and ("increase" in query or 'up' in query):
+    elif "volume" in query and ("increase" in query or "up" in query):
         volume_up()
-    
-    elif "volume" in query and ('down' in query or 'decrease' in query) :
+
+    elif "volume" in query and ("down" in query or "decrease" in query):
         volume_down()
-    
-    elif "volume" in query and 'mute' in query :
+
+    elif "volume" in query and "mute" in query:
         mute_volume()
-    
-    elif "brightness" in query and ('down' in query or 'decrease' in query) :
+
+    elif "brightness" in query and ("down" in query or "decrease" in query):
         brightness_down()
-    
-    elif "brightness" in query and ('up' in query or 'increase' in query) :
+
+    elif "brightness" in query and ("up" in query or "increase" in query):
         brightness_up()
 
-    elif 'up' in query:
+    elif "up" in query:
         scroll_up()
 
-    elif 'down' in query:
+    elif "down" in query:
         scroll_down()
-    
 
     else:
         try:
             res = gemini_model_response(query)
             speak(res)
         except Exception as e:
-            speak("Something Error is happened. Probably you are not connected to internet.")
-
+            speak(
+                "Something Error is happened. Probably you are not connected to internet."
+            )
