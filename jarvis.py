@@ -64,7 +64,7 @@ def take_command():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Adjusting for ambient noise, please wait...")
-        r.adjust_for_ambient_noise(source, duration=0.25)
+        r.adjust_for_ambient_noise(source, duration=0.1)
 
         print("Listening...")
         try:
