@@ -1,8 +1,8 @@
-# JARVIS-Voice-Assistant
+# SIFRA-Voice-Assistant
 
-JARVIS is a Python-based voice assistant that interacts with the user through speech recognition and performs tasks like opening applications, controlling system settings, searching on Google or Wikipedia, adjusting volume and brightness, scrolling, and responding using AI through Gemini API.
+SIFRA is a Python-based voice assistant that interacts with the user through speech recognition and performs tasks like opening applications, controlling system settings, searching on Google or Wikipedia, adjusting volume and brightness, scrolling, and responding using AI through Gemini API.
 
-This project uses speech recognition and text-to-speech (TTS) to provide a hands-free assistant experience, similar to Iron Man's JARVIS.
+This project uses speech recognition and text-to-speech (TTS) to provide a hands-free assistant experience, similar to Iron Man's Jarvis.
 
 ---
 
@@ -35,13 +35,13 @@ This project uses speech recognition and text-to-speech (TTS) to provide a hands
 1. Create a virtual environment:
 
    ```bash
-   conda create --prefix .\jarvis python=3.11 -y
+   conda create --prefix .\sifra python=3.11 -y
    ```
 
 2. Activate virtual environment:
 
    ```bash
-   conda activate jarvis
+   conda activate sifra
    ```
 
 3. Install required packages:
@@ -50,10 +50,10 @@ This project uses speech recognition and text-to-speech (TTS) to provide a hands
    pip install -r requirements.txt
    ```
 
-4. Run the JARVIS script:
+4. Run the sifra script:
 
    ```bash
-   python jarvis.py
+   python sifra.py
    ```
 
 ## 🎤 Example Voice Commands
@@ -92,6 +92,6 @@ Inspired by Tony Stark's JARVIS
 
 ---
 
-If you want, I can also **create a ready-to-use `requirements.txt`** file with all your project dependencies so anyone can run your Jarvis without errors.  
+If you want, I can also **create a ready-to-use `requirements.txt`** file with all your project dependencies so anyone can run your SIFRA without errors.  
 
 Do you want me to do that next?
